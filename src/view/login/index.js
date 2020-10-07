@@ -1,7 +1,7 @@
 import React from "react";
 
-function Course() {
-  return <h1>课程</h1>;
+function Login() {
+  return <h1>登录</h1>;
 }
 
-export default Course;
+export default Login;

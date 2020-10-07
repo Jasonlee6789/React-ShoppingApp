@@ -1,6 +1,7 @@
 import React from "react";
 
-function Work() {
+function Work(props) {
+  console.log(props);
   return <h1>作品</h1>;
 }
 

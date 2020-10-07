@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
+import Frame from "./common/component/frame";
 import IndexRoute from "./router";
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
+      <Frame>
         <IndexRoute />
-      </div>
-      ;
+      </Frame>
     </BrowserRouter>
   );
 }
