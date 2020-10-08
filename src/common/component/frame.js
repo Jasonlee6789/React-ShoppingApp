@@ -1,7 +1,8 @@
 import React from "react";
 import Menu from "./menu";
 import Header from "./header";
-
+import "../css/reset.css";
+import "../css/common.css";
 export default function Frame(props) {
   console.log(props);
   return (
