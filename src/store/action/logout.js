@@ -1,12 +1,11 @@
 import HTTP from "./http";
-export default function login(data) {
+export default function loginOut(data) {
   return function (dispatch) {
-    return HTTP.post("/user/login").then((res) => {
+    return HTTP.post("/user/logout").then((res) => {
       console.log(res);
       if (res.data.code == 0) {
         dispatch({
-          type: "LOGIN",
-          user: data.username,
+          type: "LOGOUT",
         });
       }
       return res.data;

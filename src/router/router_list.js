@@ -52,5 +52,24 @@ const routerList = [
     },
   },
 ];
-
-export default routerList;
+const nav = [
+  {
+    name: "首页",
+    path: "/",
+    exact: true,
+    className: "iconfont icon-home",
+  },
+  {
+    name: "课程安排",
+    path: "/course",
+    exact: true,
+    className: "iconfont icon-kecheng",
+  },
+  {
+    name: "讲师团队",
+    path: "/lecturer",
+    exact: true,
+    className: "iconfont icon-peixunjianshi",
+  },
+];
+export default { routerList, nav };
