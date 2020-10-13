@@ -1,0 +1,49 @@
+import HTTP from "./http";
+
+function getGood(id) {
+  return function (dispatch) {
+    return HTTP.post(`/lecturer/getgood`, {
+      article_id: id,
+    }).then((res) => {
+      console.log(res);
+      if (res.data.code === 0) {
+        dispatch({
+          type: "GOOD",
+          goodId: res.data.gooid,
+        });
+      } else {
+        dispatch({
+          type: "CANCEL_GOOD",
+        });
+      }
+    });
+  };
+}
+
+function setGood(id) {
+  return function (dispatch) {
+    return HTTP.post(`/lecturer/setgood`, {
+      article_id: id,
+    }).then((res) => {
+      console.log(res);
+      if (res.data.code == 0) {
+        dispatch({
+          type: "GOOD",
+        });
+      }
+    });
+  };
+}
+
+function cancelGood(id, goodid) {
+  return function (dispatch) {
+    return HTTP.post(`/lecturer/cancelgood`, {
+      article_id: id,
+      goodid,
+    }).then((res) => {
+      console.log(res);
+    });
+  };
+}
+
+export { getGood, setGood, cancelGood };

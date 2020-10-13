@@ -1,9 +1,44 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import BScroll from "better-scroll";
 
 export default function Tab(props) {
   console.log(props);
   let { data, render } = props;
+  let bannerWrap = useRef(null);
+  let [now, setNow] = useState(0);
+  let bScroll = null;
+
+  useEffect(() => {
+    let timer = 0;
+    bScroll = new BScroll(bannerWrap.current, {
+      scrollX: true,
+      scrollY: false,
+      eventPassthrough: "vertical",
+      momentum: false,
+      snap: {
+        loop: true,
+      },
+    });
+    bScroll.on("scrollEnd", () => {
+      console.log(bScroll.getCurrentPage());
+      setNow(bScroll.getCurrentPage().pageX);
+    });
+    timer = setInterval(() => {
+      bScroll.next(200);
+      console.log("滑动slide又执行");
+    }, 2000);
+    bannerWrap.current.addEventListener("touchstart", () => {
+      clearInterval(timer);
+    });
+    bannerWrap.current.addEventListener("touchend", () => {
+      timer = setInterval(() => {
+        bScroll.next(200);
+      }, 2000);
+    });
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
   return (
     <div className="banner">
       <div className="banner_img">
@@ -13,11 +48,15 @@ export default function Tab(props) {
           ))}
         </ul>
       </div>
-      <ul className="banner_nav">
-        {data.map((item, index) => (
-          <li key={index}></li>
-        ))}
-      </ul>
+      {data.length < 1 ? (
+        ""
+      ) : (
+        <ul className="banner_nav">
+          {data.map((item, index) => (
+            <li key={index} className={index === now ? "active" : ""}></li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

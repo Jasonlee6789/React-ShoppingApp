@@ -6,9 +6,9 @@ import IndexRoute from "./router";
 function App() {
   return (
     <BrowserRouter>
-      <Frame>
-        <IndexRoute />
-      </Frame>
+      {/* <Frame> */}
+      <IndexRoute />
+      {/* </Frame> */}
     </BrowserRouter>
   );
 }

@@ -12,7 +12,7 @@ const routerList = [
     exact: true,
     render(props) {
       console.log(props);
-      return <Index />;
+      return <Index {...props} />;
     },
   },
   {
@@ -21,7 +21,7 @@ const routerList = [
     exact: true,
     render(props) {
       console.log(props);
-      return <Course />;
+      return <Course {...props} />;
     },
   },
   {
@@ -30,16 +30,16 @@ const routerList = [
     exact: true,
     render(props) {
       console.log(props);
-      return <Lecturer />;
+      return <Lecturer {...props} />;
     },
   },
   {
     name: "作品详情",
-    path: "/work",
+    path: "/work/:id",
     exact: true,
     render(props) {
       console.log(props);
-      return <Work />;
+      return <Work {...props} />;
     },
   },
   {
@@ -48,7 +48,7 @@ const routerList = [
     exact: true,
     render(props) {
       console.log(props);
-      return <Login />;
+      return <Login {...props} />;
     },
   },
 ];
