@@ -34,7 +34,7 @@ function RegisterBox(props) {
         }, 100);
       });
   }
-
+  let point = {};
   return (
     <div className="register_box">
       <h3>注册账号</h3>

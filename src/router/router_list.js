@@ -72,4 +72,4 @@ const nav = [
     className: "iconfont icon-peixunjianshi",
   },
 ];
-export default { routerList, nav };
+export { routerList, nav };

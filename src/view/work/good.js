@@ -34,7 +34,7 @@ function Good(props) {
           ) {
             if (user) {
               if (good) {
-                dispatch(cancelGood(id, goodid));
+                dispatch(cancelGood(id, goodId));
               } else {
                 dispatch(setGood(id));
               }

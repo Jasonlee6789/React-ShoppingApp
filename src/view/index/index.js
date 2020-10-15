@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import getWorks from "../../store/action/getWorks";
-import Tab from "../../common/components/tab";
+import Tab from "../../common/component/tab";
 import "../../common/css/index.css";
 import Course from "./course";
 import Vip from "./vip";

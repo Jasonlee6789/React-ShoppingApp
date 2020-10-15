@@ -1,7 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import { Switch } from "react-router-dom";
-import routerList from "./router_list";
+import { routerList } from "./router_list";
 function IndexRoute() {
   return (
     <Switch>

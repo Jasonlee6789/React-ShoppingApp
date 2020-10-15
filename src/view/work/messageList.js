@@ -1,6 +1,19 @@
 import React from "react";
 import { connect } from "react-redux";
 import ToDate from "../../common/component/ToDate";
+function MessageList(props) {
+  let { messageList } = props;
+  return (
+    <div className="comment_list_wrap">
+      {messageList.length <= 0 ? (
+        <p className="comment_list_info">快来发布一条评论吧</p>
+      ) : (
+        <MessageListView {...props} />
+      )}
+    </div>
+  );
+}
+
 function MessageListView(props) {
   //console.log(props);
   let { messageList, loadEnd, loading } = props;
@@ -27,16 +40,5 @@ function MessageListView(props) {
     </div>
   );
 }
-function MessageList(props) {
-  let { messageList } = props;
-  return (
-    <div className="comment_list_wrap">
-      {messageList.length <= 0 ? (
-        <p className="comment_list_info">快来发布一条评论吧</p>
-      ) : (
-        <MessageListView {...props} />
-      )}
-    </div>
-  );
-}
+
 export default connect((state) => state.messageList)(MessageList);

@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { nav } from "../../router/route_list";
+import { nav } from "../../router/router_list";
 
 export default function Menu(props) {
   return (

@@ -34,7 +34,7 @@ function LoginBox(props) {
         }, 100);
       });
   }
-
+  let point = {};
   return (
     <div className="login_box">
       <figure className="user_img">
