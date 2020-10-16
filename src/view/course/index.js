@@ -3,7 +3,7 @@ import Frame from "../../common/component/frame";
 import "../../common/css/class.css";
 function Course() {
   return (
-    <Frame>
+    <Frame bounce={false}>
       <div className="class_box">
         <h2>
           <span>一周学习安排</span>
